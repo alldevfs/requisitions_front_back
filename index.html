@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script> -->
+    <script>
+
+        async function getContent() {
+            try {
+                const response = await fetch('http://localhost:4567')
+                const data = await response.json()
+                setContent(data);
+            } catch (error) {
+                console.log('Erro: ' + error)
+            }
+        }
+
+        function setContent(users) {
+
+            let output = '<pre>';
+            for (let user of users) {
+                output += `<li>${ user.name }</li>`;
+            }
+            document.getElementById('content').innerHTML = output;
+        }
+
+        // $(document).ready(function () { })
+        getContent();
+
+
+    </script>
+</head>
+
+<body>
+    <div id="content"> </div>
+</body>
+
+
+</html>
