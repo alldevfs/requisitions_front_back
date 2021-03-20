@@ -35,3 +35,5 @@
 > Use o axios para consumir a API pelo back-end, ele ja vem em json e pode usar da extração de dados para resumir o resultado { data }.
 
 > Inclua o try Catch ao consumir api pelo back-end.
+
+* font tamplate - https://github.com/dbader/readme-template/blob/master/README.md
